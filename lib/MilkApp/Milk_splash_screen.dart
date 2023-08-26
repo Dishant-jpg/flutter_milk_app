@@ -14,7 +14,7 @@ class Mysplashscreen extends StatefulWidget {
 class _MysplashscreenState extends State<Mysplashscreen> {
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 8), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => MyloginScreen()));
     });

@@ -86,9 +86,10 @@ class _MyloginScreenState extends State<MyloginScreen> {
                           filled: true, //<-- SEE HERE
                           fillColor: Color.fromARGB(20, 0, 0, 0),
                           prefixIcon: Icon(
-                            Icons.password_sharp,
+                            Icons.lock,
                             color: Color.fromARGB(132, 0, 0, 0),
                           ),
+                          suffixIcon: Icon(Icons.remove_red_eye_rounded),
                           hintText: "Enter your password",
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,

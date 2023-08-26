@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_milk_app/MilkApp/first_page.dart';
+import 'package:flutter_milk_app/MilkApp/Ui_helper.dart';
+import 'package:flutter_milk_app/MilkApp/drawer.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -8,10 +11,264 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController Search = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-    );
+        appBar: AppBar(
+          title: Text(
+            "Milk App",
+            style: TextStyle(fontSize: 25),
+          ),
+          centerTitle: true,
+        ),
+        drawer: MyDrawer(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 30,
+                ),
+                child: Center(
+                  child: Container(
+                    width: 380,
+                    child: TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: Search,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Color.fromARGB(132, 0, 0, 0),
+                        ),
+                        hintText: "Search",
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.red),
+                            borderRadius: BorderRadius.circular(10)),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                              color: const Color.fromARGB(255, 31, 53, 71)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Positioned(
+                top: 30,
+                child: Stack(
+                  children: [
+                    Container(
+                      height: 220,
+                      width: 370,
+                      clipBehavior: Clip.antiAlias,
+                      child: Image.asset(
+                        "assets/images/backs.jpg",
+                        fit: BoxFit.cover,
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(15)),
+                    ),
+                    Positioned(
+                      top: 17,
+                      left: 60,
+                      child: Text(
+                        "Grab Your Dairy items",
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Positioned(
+                      top: 50,
+                      left: 80,
+                      child: Text(
+                        "Discount Upto",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    Positioned(
+                      top: 53,
+                      right: 100,
+                      child: Text(
+                        "50% off",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MilkCatergory()));
+                      },
+                      child: Uihelper.CustomColumn(
+                          100, 100, "assets/images/milk.png", "Milk"),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MilkCatergory()));
+                      },
+                      child: Uihelper.CustomColumn(
+                          100, 100, "assets/images/ghee.jpg", "Ghee"),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MilkCatergory()));
+                      },
+                      child: Uihelper.CustomColumn(
+                          100, 100, "assets/images/dahi.png", "Dahi"),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MilkCatergory()));
+                      },
+                      child: Uihelper.CustomColumn(
+                          100, 100, "assets/images/butter.jpeg", "Butter Milk"),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10, left: 25),
+                    child: Text(
+                      "Popular Now",
+                      style:
+                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      child: Image.network(
+                          'https://media.tenor.com/bH5qXUAuk4kAAAAM/fire.gif'),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Uihelper.CustomContainers(240, 240,
+                        "assets/images/buffalomilk.jpeg", "Buffalo Milk"),
+                    Uihelper.CustomContainers(
+                        240, 240, "assets/images/camelmilk.jpg", "Camel Milk"),
+                    Uihelper.CustomContainers(240, 240,
+                        "assets/images/buttermilk.jpeg", "Butter Milk"),
+                    Uihelper.CustomContainers(
+                        240, 240, "assets/images/ghee.jpg", "Ghee"),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                height: 200,
+                width: 370,
+                clipBehavior: Clip.antiAlias,
+                child: Image.asset(
+                  "assets/images/banner.jpg",
+                  fit: BoxFit.cover,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 0, left: 25),
+                    child: Text(
+                      "Beverages",
+                      style:
+                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(),
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      child: Image.network(
+                          'https://i.pinimg.com/originals/e0/a7/c8/e0a7c8b5b66389d3e9a08ea5429ff8b4.gif'),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Uihelper.CustomContainers(
+                        240, 240, "assets/images/milkshake.webp", "Milk Shake"),
+                    Uihelper.CustomContainers(
+                        240, 240, "assets/images/lassi.jpg", "Lassi"),
+                    Uihelper.CustomContainers(
+                        240, 240, "assets/images/shakes.jpeg", "Shakes"),
+                    Uihelper.CustomContainers(
+                        240, 240, "assets/images/kool.jpeg", "Kool KOKO"),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 70,
+              ),
+            ],
+          ),
+        ));
   }
 }
