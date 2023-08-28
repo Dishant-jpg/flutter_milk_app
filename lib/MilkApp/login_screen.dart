@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_milk_app/MilkApp/Home_page.dart';
-import 'package:flutter_milk_app/MilkApp/Milk_splash_screen.dart';
 import 'package:flutter_milk_app/MilkApp/Register_page.dart';
+import 'package:flutter_milk_app/MilkApp/Ui_helper.dart';
 import 'package:flutter_milk_app/MilkApp/forgot_password.dart';
 
 class MyloginScreen extends StatefulWidget {
@@ -12,8 +12,24 @@ class MyloginScreen extends StatefulWidget {
 }
 
 class _MyloginScreenState extends State<MyloginScreen> {
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController Cemail = TextEditingController();
+  TextEditingController Cpassword = TextEditingController();
+
+  // authication annoymnus function
+
+  _auth(String email, String password) {
+    if (email == "" || password == "") {
+      Uihelper.customdialogbox("Enter Required Field", context);
+    } else {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(),
+          ));
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +74,7 @@ class _MyloginScreenState extends State<MyloginScreen> {
                     width: 300,
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
-                      controller: email,
+                      controller: Cemail,
                       decoration: InputDecoration(
                           filled: true, //<-- SEE HERE
                           fillColor: Color.fromARGB(21, 0, 0, 0),
@@ -80,7 +96,7 @@ class _MyloginScreenState extends State<MyloginScreen> {
                     width: 300,
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
-                      controller: password,
+                      controller: Cpassword,
                       obscureText: true,
                       decoration: InputDecoration(
                           filled: true, //<-- SEE HERE
@@ -106,10 +122,8 @@ class _MyloginScreenState extends State<MyloginScreen> {
                     child: ElevatedButton(
                       child: Text("Sign In"),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MyHomePage()));
+                        _auth(
+                            Cemail.text.toString(), Cpassword.text.toString());
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 6, 98, 174),

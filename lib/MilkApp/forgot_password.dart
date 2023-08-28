@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_milk_app/MilkApp/login_screen.dart';
+import 'package:flutter_milk_app/MilkApp/Ui_helper.dart';
 
 class Myforgotpassword extends StatefulWidget {
   const Myforgotpassword({super.key});
@@ -9,7 +9,16 @@ class Myforgotpassword extends StatefulWidget {
 }
 
 class _MyforgotpasswordState extends State<Myforgotpassword> {
-  TextEditingController Email = TextEditingController();
+  TextEditingController CEmail = TextEditingController();
+
+  _auth(String email) {
+    if (email == "") {
+      Uihelper.customdialogbox("Enter Required Field", context);
+    } else {
+      Uihelper.customdialog("OTP Send in Email", context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +83,7 @@ class _MyforgotpasswordState extends State<Myforgotpassword> {
             ]),
             child: TextField(
               keyboardType: TextInputType.emailAddress,
-              controller: Email,
+              controller: CEmail,
               decoration: InputDecoration(
                   filled: true, //<-- SEE HERE
                   fillColor: Color.fromARGB(21, 0, 0, 0),
@@ -101,8 +110,7 @@ class _MyforgotpasswordState extends State<Myforgotpassword> {
             child: ElevatedButton(
               child: Text("Send"),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyloginScreen()));
+                _auth(CEmail.text.toString());
               },
               style: ElevatedButton.styleFrom(
                   primary: Color.fromARGB(255, 6, 98, 174),

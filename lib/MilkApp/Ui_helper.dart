@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_milk_app/MilkApp/login_screen.dart';
 
 class Uihelper {
   static CustomColumn(
@@ -33,14 +34,14 @@ class Uihelper {
 
   static Customtext(
     String texts,
+    double fontsized,
+    FontWeight? fontweight,
+    Color? Colors,
   ) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 28),
-      child: Text(
+    return Text(
         texts,
         style: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
-      ),
+            fontSize: fontsized, fontWeight: fontweight, color: Colors),
     );
   }
 
@@ -133,5 +134,41 @@ class Uihelper {
         )
       ],
     );
+  }
+
+  static customdialogbox(String text, BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(text),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text("ok"))
+            ],
+          );
+        });
+  }
+
+  static customdialog(String text, BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(text),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyloginScreen()));
+                },
+                child: const Text("ok"),
+              )
+            ],
+          );
+        });
   }
 }

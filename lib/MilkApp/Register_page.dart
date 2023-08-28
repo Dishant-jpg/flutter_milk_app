@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_milk_app/MilkApp/Home_page.dart';
+import 'package:flutter_milk_app/MilkApp/Ui_helper.dart';
 import 'package:flutter_milk_app/MilkApp/login_screen.dart';
 
 class MyRegisterPage extends StatefulWidget {
@@ -10,10 +10,19 @@ class MyRegisterPage extends StatefulWidget {
 }
 
 class _MyRegisterPageState extends State<MyRegisterPage> {
-  TextEditingController Name = TextEditingController();
-  TextEditingController Email = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController Password = TextEditingController();
+  TextEditingController CName = TextEditingController();
+  TextEditingController CEmail = TextEditingController();
+  TextEditingController Cphone = TextEditingController();
+  TextEditingController CPassword = TextEditingController();
+
+  _auth(String name, String email, String phone, String password) {
+    if (name == "" && email == "" && phone == "" && password == "") {
+      Uihelper.customdialogbox("Enter Required Field", context);
+    } else {
+      Uihelper.customdialog("You are Register in App", context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +77,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                 ]),
                 child: TextField(
                   keyboardType: TextInputType.name,
-                  controller: Name,
+                  controller: CName,
                   decoration: InputDecoration(
                       filled: true, //<-- SEE HERE
                       fillColor: Color.fromARGB(21, 0, 0, 0),
@@ -95,7 +104,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                 ]),
                 child: TextField(
                   keyboardType: TextInputType.emailAddress,
-                  controller: Email,
+                  controller: CEmail,
                   decoration: InputDecoration(
                       filled: true, //<-- SEE HERE
                       fillColor: Color.fromARGB(21, 0, 0, 0),
@@ -122,7 +131,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                 ]),
                 child: TextField(
                   keyboardType: TextInputType.phone,
-                  controller: phone,
+                  controller: Cphone,
                   decoration: InputDecoration(
                       filled: true, //<-- SEE HERE
                       fillColor: Color.fromARGB(21, 0, 0, 0),
@@ -149,7 +158,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                 ]),
                 child: TextField(
                   keyboardType: TextInputType.visiblePassword,
-                  controller: Password,
+                  controller: CPassword,
                   decoration: InputDecoration(
                       filled: true, //<-- SEE HERE
                       fillColor: Color.fromARGB(21, 0, 0, 0),
@@ -172,10 +181,8 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                 child: ElevatedButton(
                   child: Text("Register"),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MyloginScreen()));
+                    _auth(CEmail.text.toString(), CName.text.toString(),
+                        CPassword.text.toString(), Cphone.text.toString());
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromARGB(255, 6, 98, 174),
