@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_milk_app/MilkApp/Amul_milk.dart';
+import 'package:flutter_milk_app/MilkApp/Avin_milk.dart';
+import 'package:flutter_milk_app/MilkApp/Kwality_milk.dart';
 import 'package:flutter_milk_app/MilkApp/Mother_diary.dart';
 import 'package:flutter_milk_app/MilkApp/Nestle.dart';
 import 'package:flutter_milk_app/MilkApp/Saras_milk.dart';
@@ -53,7 +55,7 @@ class _MyCowsState extends State<MyCows> {
                       MaterialPageRoute(builder: (context) => Motherdiary()));
                 },
                 child: Uihelper.CustomContainer(
-                    180, 180, "assets/images/mother.jpg", "Mother Diary Milk"),
+                    180, 180, "assets/images/mother.jpg", "Motherdiary"),
               ),
               InkWell(
                 onTap: () {
@@ -70,7 +72,7 @@ class _MyCowsState extends State<MyCows> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MyCows()));
+                      MaterialPageRoute(builder: (context) => (Avinmilk())));
                 },
                 child: Uihelper.CustomContainer(
                     180, 180, "assets/images/aavin.jpg", "Aavin Milk"),
@@ -78,7 +80,7 @@ class _MyCowsState extends State<MyCows> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Nestlemilk()));
+                      MaterialPageRoute(builder: (context) => KwalityMilk()));
                 },
                 child: Uihelper.CustomContainer(
                     180, 180, "assets/images/kwality.webp", "Kwality Milk"),

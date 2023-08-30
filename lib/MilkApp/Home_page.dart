@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_milk_app/MilkApp/first_page.dart';
+import 'package:flutter_milk_app/MilkApp/Butter_milk.dart';
+import 'package:flutter_milk_app/MilkApp/Ghee_caterory.dart';
+import 'package:flutter_milk_app/MilkApp/Kool)koko.dart';
+import 'package:flutter_milk_app/MilkApp/Milk_shake.dart';
+import 'package:flutter_milk_app/MilkApp/buffalo_milk.dart';
+import 'package:flutter_milk_app/MilkApp/camel_milk.dart';
+import 'package:flutter_milk_app/MilkApp/Milk_category.dart';
 import 'package:flutter_milk_app/MilkApp/Ui_helper.dart';
 import 'package:flutter_milk_app/MilkApp/drawer.dart';
+import 'package:flutter_milk_app/MilkApp/lassi.dart';
+import 'package:flutter_milk_app/MilkApp/shakes.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -196,14 +204,52 @@ class _MyHomePageState extends State<MyHomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Uihelper.CustomContainers(240, 240,
-                        "assets/images/buffalomilk.jpeg", "Buffalo Milk"),
-                    Uihelper.CustomContainers(
-                        240, 240, "assets/images/camelmilk.jpg", "Camel Milk"),
-                    Uihelper.CustomContainers(240, 240,
-                        "assets/images/buttermilk.jpeg", "Butter Milk"),
-                    Uihelper.CustomContainers(
-                        240, 240, "assets/images/ghee.jpg", "Ghee"),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Mybuffalo()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(240, 240,
+                            "assets/images/buffalomilk.jpeg", "Buffalo Milk"),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Mycamel()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(240, 240,
+                            "assets/images/camelmilk.jpg", "Camel Milk"),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyButtermilk()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(240, 240,
+                            "assets/images/buttermilk.jpeg", "Butter Milk"),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => GheeCatergory()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(
+                            240, 240, "assets/images/ghee.jpg", "Ghee"),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -253,14 +299,50 @@ class _MyHomePageState extends State<MyHomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Uihelper.CustomContainers(
-                        240, 240, "assets/images/milkshake.webp", "Milk Shake"),
-                    Uihelper.CustomContainers(
-                        240, 240, "assets/images/lassi.jpg", "Lassi"),
-                    Uihelper.CustomContainers(
-                        240, 240, "assets/images/shakes.jpeg", "Shakes"),
-                    Uihelper.CustomContainers(
-                        240, 240, "assets/images/kool.jpeg", "Kool KOKO"),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Milkshake()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(240, 240,
+                            "assets/images/milkshake.webp", "Milk Shake"),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => lassi()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(
+                            240, 240, "assets/images/lassi.jpg", "Lassi"),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => shakes()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(
+                            240, 240, "assets/images/shakes.jpeg", "Shakes"),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => kook_KOKO()));
+                      },
+                      child: Container(
+                        child: Uihelper.CustomContainers(
+                            240, 240, "assets/images/kool.jpeg", "Kool KOKO"),
+                      ),
+                    ),
                   ],
                 ),
               ),

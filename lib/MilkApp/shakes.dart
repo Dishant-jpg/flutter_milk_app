@@ -2,37 +2,40 @@ import 'package:flutter/material.dart';
 
 import 'Ui_helper.dart';
 
-class Mysheep extends StatefulWidget {
-  const Mysheep({super.key});
+class shakes extends StatefulWidget {
+  const shakes({super.key});
 
   @override
-  State<Mysheep> createState() => _MysheepState();
+  State<shakes> createState() => _shakesState();
 }
 
-class _MysheepState extends State<Mysheep> {
+class _shakesState extends State<shakes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cow's Milk"),
+        title: Text("Organic Ghee"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: 360,
+              height: 450,
               width: double.infinity,
-              child: Image.asset("assets/images/milkback.png"),
+              child: Image.asset(
+                "assets/images/shakes.jpeg",
+                fit: BoxFit.cover,
+              ),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 240),
+              padding: const EdgeInsets.only(right: 277),
               child: Container(
                 child: Uihelper.Customtext(
-                    "Sheep Milk", 26, FontWeight.bold, Colors.green),
+                    "Shakes", 26, FontWeight.bold, Colors.green),
               ),
             ),
             SizedBox(
@@ -235,7 +238,7 @@ class _MysheepState extends State<Mysheep> {
               padding: const EdgeInsets.only(left: 23),
               child: Container(
                 child: Uihelper.Customtext(
-                    "Sheep Milk is the most hygienic liquid milk available in the market. It is pasteurized in state-of-the-art processing plants and pouch-packed to make it conveniently available to consumers.",
+                    "Shakes is the most hygienic liquid milk available in the market. It is pasteurized in state-of-the-art processing plants and pouch-packed to make it conveniently available to consumers.",
                     20,
                     FontWeight.normal,
                     Colors.black),

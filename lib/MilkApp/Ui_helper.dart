@@ -39,9 +39,9 @@ class Uihelper {
     Color? Colors,
   ) {
     return Text(
-        texts,
-        style: TextStyle(
-            fontSize: fontsized, fontWeight: fontweight, color: Colors),
+      texts,
+      style:
+          TextStyle(fontSize: fontsized, fontWeight: fontweight, color: Colors),
     );
   }
 
@@ -170,5 +170,26 @@ class Uihelper {
             ],
           );
         });
+  }
+
+  static Customcontainer2(
+    String texts,
+    Color? color,
+    double fontsized,
+    FontWeight? fontweight,
+    Color? Colors,
+  ) {
+    return Container(
+      height: 50,
+      width: 80,
+      child: Center(
+          child: Text(
+        texts,
+        style: TextStyle(
+            fontSize: fontsized, fontWeight: fontweight, color: Colors),
+      )),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(15), color: color),
+    );
   }
 }

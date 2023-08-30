@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'Ui_helper.dart';
 
-class Mysheep extends StatefulWidget {
-  const Mysheep({super.key});
+class Madhusagarghee extends StatefulWidget {
+  const Madhusagarghee({super.key});
 
   @override
-  State<Mysheep> createState() => _MysheepState();
+  State<Madhusagarghee> createState() => _MadhusagargheeState();
 }
 
-class _MysheepState extends State<Mysheep> {
+class _MadhusagargheeState extends State<Madhusagarghee> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cow's Milk"),
+        title: Text("Madhusagar Ghee"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -23,16 +23,19 @@ class _MysheepState extends State<Mysheep> {
             Container(
               height: 360,
               width: double.infinity,
-              child: Image.asset("assets/images/milkback.png"),
+              child: Image.asset(
+                "assets/images/madhusagar ghee.webp",
+                fit: BoxFit.cover,
+              ),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 240),
+              padding: const EdgeInsets.only(right: 148),
               child: Container(
                 child: Uihelper.Customtext(
-                    "Sheep Milk", 26, FontWeight.bold, Colors.green),
+                    "Madhusagar Ghee", 26, FontWeight.bold, Colors.green),
               ),
             ),
             SizedBox(
@@ -235,7 +238,7 @@ class _MysheepState extends State<Mysheep> {
               padding: const EdgeInsets.only(left: 23),
               child: Container(
                 child: Uihelper.Customtext(
-                    "Sheep Milk is the most hygienic liquid milk available in the market. It is pasteurized in state-of-the-art processing plants and pouch-packed to make it conveniently available to consumers.",
+                    "Madhusagar Ghee is the most hygienic liquid milk available in the market. It is pasteurized in state-of-the-art processing plants and pouch-packed to make it conveniently available to consumers.",
                     20,
                     FontWeight.normal,
                     Colors.black),

@@ -2,37 +2,37 @@ import 'package:flutter/material.dart';
 
 import 'Ui_helper.dart';
 
-class Mysheep extends StatefulWidget {
-  const Mysheep({super.key});
+class Amulghee extends StatefulWidget {
+  const Amulghee({super.key});
 
   @override
-  State<Mysheep> createState() => _MysheepState();
+  State<Amulghee> createState() => _AmulgheeState();
 }
 
-class _MysheepState extends State<Mysheep> {
+class _AmulgheeState extends State<Amulghee> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cow's Milk"),
+        title: Text("Amul Ghee"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              height: 360,
+              height: 412,
               width: double.infinity,
-              child: Image.asset("assets/images/milkback.png"),
+              child: Image.asset("assets/images/amul ghee.jpg"),
             ),
             SizedBox(
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 240),
+              padding: const EdgeInsets.only(right: 235),
               child: Container(
                 child: Uihelper.Customtext(
-                    "Sheep Milk", 26, FontWeight.bold, Colors.green),
+                    "Amul Ghee", 26, FontWeight.bold, Colors.green),
               ),
             ),
             SizedBox(
@@ -235,7 +235,7 @@ class _MysheepState extends State<Mysheep> {
               padding: const EdgeInsets.only(left: 23),
               child: Container(
                 child: Uihelper.Customtext(
-                    "Sheep Milk is the most hygienic liquid milk available in the market. It is pasteurized in state-of-the-art processing plants and pouch-packed to make it conveniently available to consumers.",
+                    "Amul Ghee is the most hygienic liquid milk available in the market. It is pasteurized in state-of-the-art processing plants and pouch-packed to make it conveniently available to consumers.",
                     20,
                     FontWeight.normal,
                     Colors.black),
