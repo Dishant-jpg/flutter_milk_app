@@ -1,0 +1,15 @@
+{
+    "configurations": [
+      {
+        "name": "flutter_application",
+        "request": "launch",
+        "type": "dart"
+      },
+      {
+        "name": "flutter_application (profile mode)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "profile"
+      }
+    ]
+  }
